@@ -8,6 +8,18 @@ function writePassword() {
     var pwLength = prompt("You must choose a number between 8 and 128.")
     if (pwLength > 8 && pwLength < 128) break;
     }
+  var upperCase = confirm("Do you want your password to include uppercase characters?");
+  var lowerCase = confirm("Do you want your password to include lowercase characters?");
+  var numbers = confirm("Do you want your password to include numbers?");
+  var special = confirm("Do you want your password to include speical characters?");
+  while (upperCase === false && lowerCase === false && numbers === false && special === false) {
+    alert("You must select at least one character type.");
+    var upperCase = confirm("Do you want your password to include uppercase characters?");
+    var lowerCase = confirm("Do you want your password to include lowercase characters?");
+    var numbers = confirm("Do you want your password to include numbers?");
+    var special = confirm("Do you want your password to include speical characters?");
+    if (upperCase === true || lowerCase === true || numbers === true || special === true) break;
+  }
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
