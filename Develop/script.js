@@ -20,6 +20,7 @@ function writePassword() {
     var special = confirm("Do you want your password to include speical characters?");
     if (upperCase === true || lowerCase === true || numbers === true || special === true) break;
   }
+  alert("Your password will be " + pwLength + " characters and will contain the following types of characters: Uppercase: " + upperCase + ", Lowercase: " + lowerCase + ", Numbers: " + numbers + ", and Special Characters: " + special + ".")
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
