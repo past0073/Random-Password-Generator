@@ -29,26 +29,38 @@ function writePassword() {
   var lowerArr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   var numArr = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
   var specialArr =  ["!", "#", "$", "%","&","'", "(", ")", "*", "+", ",", "-", ".", ":", ";", "<", "=", ">", "?", "@"];
+ 
+  // Add selected characters to an array
+  charArray = [];
+
+     if (upperCase === true)
+    charArray.push(upperArr);
+    if (lowerCase === true)
+    charArray.push(lowerArr);
+    if (numbers === true)
+    charArray.push(numArr);
+    if (special === true)
+    charArray.push(specialArr);
+ 
+  console.log(charArray);
+  
+  // Put all values into a single array
+  var charArray = [].concat.apply([], charArray);
+  
+  console.log(charArray);
+ 
   var pwLength = parseInt(pwLength)
  
+  // Randomize the password
 function generatePassword () {
- for (i=0; i<pwLength; i++) {
-
-    ranUpper = upperArr[Math.floor(Math.random() * upperArr.length)];
-    ranLower = lowerArr[Math.floor(Math.random() * lowerArr.length)];
-    ranNum = numArr[Math.floor(Math.random() * numArr.length)];
-    ranSpecial = specialArr[Math.floor(Math.random() * specialArr.length)];
- 
-
-    passwordArray = [ranUpper, ranLower, ranNum, ranSpecial];
-    passwordText = passwordArray[Math.floor(Math.random() * pwLength)];
-    console.log(passwordText);
-    
+  let generatedPassword = "";
+  for (i=0; i<pwLength; i++) {
+   
+      password = charArray[Math.floor(Math.random() * charArray.length)];
+       generatedPassword = generatedPassword + password;      
  }
+ return generatedPassword;
  }
-
-
-
 
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
