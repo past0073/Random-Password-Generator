@@ -10,20 +10,42 @@ function writePassword() {
     }
 
   var upperCase = confirm("Do you want your password to include uppercase characters?");
+    if (upperCase === true)
+    alert("Your password will contain upper case characters.")
+    else alert ("Your password will not contain upper case characters.")
   var lowerCase = confirm("Do you want your password to include lowercase characters?");
+    if (lowerCase === true)
+    alert("Your password will contain lower case characters.")
+    else alert ("Your password will not contain lower case characters.")
   var numbers = confirm("Do you want your password to include numbers?");
+    if (numbers === true)
+    alert("Your password will contain numbers.")
+    else alert ("Your password will not contain numbers.")
   var special = confirm("Do you want your password to include speical characters?");
+    if (special === true)
+    alert("Your password will contain special characters.")
+    else alert ("Your password will not contain special characters.");
 
   while (upperCase === false && lowerCase === false && numbers === false && special === false) {
     alert("You must select at least one character type.");
     var upperCase = confirm("Do you want your password to include uppercase characters?");
-    var lowerCase = confirm("Do you want your password to include lowercase characters?");
-    var numbers = confirm("Do you want your password to include numbers?");
-    var special = confirm("Do you want your password to include speical characters?");
+    if (upperCase === true)
+    alert("Your password will contain upper case characters.")
+    else alert ("Your password will not contain upper case characters.")
+  var lowerCase = confirm("Do you want your password to include lowercase characters?");
+    if (lowerCase === true)
+    alert("Your password will contain lower case characters.")
+    else alert ("Your password will not contain lower case characters.")
+  var numbers = confirm("Do you want your password to include numbers?");
+    if (numbers === true)
+    alert("Your password will contain numbers.")
+    else alert ("Your password will not contain numbers.")
+  var special = confirm("Do you want your password to include speical characters?");
+    if (special === true)
+    alert("Your password will contain special characters.")
+    else alert ("Your password will not contain special characters.");
     if (upperCase === true || lowerCase === true || numbers === true || special === true) break;
   }
-
-  alert("Your password will be " + pwLength + " characters and will contain the following types of characters: Uppercase: " + upperCase + ", Lowercase: " + lowerCase + ", Numbers: " + numbers + ", and Special Characters: " + special + ".")
   
   var upperArr = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
   var lowerArr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
