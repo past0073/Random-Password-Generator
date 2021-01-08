@@ -2,13 +2,14 @@
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
+// Gather user password length preference
 function writePassword() {
   var pwLength = prompt("How many characters should your password be? Select a number between 8 and 128.");
   while (pwLength < 8 || pwLength > 128 || pwLength === "") {
     var pwLength = prompt("You must choose a number between 8 and 128.")
     if (pwLength > 8 && pwLength < 128) break;
     }
-
+// Gather user password character preferences
   var upperCase = confirm("Do you want your password to include uppercase characters?");
     if (upperCase === true)
     alert("Your password will contain upper case characters.")
@@ -26,6 +27,7 @@ function writePassword() {
     alert("Your password will contain special characters.")
     else alert ("Your password will not contain special characters.");
 
+// Ensure that at least one character type has been selected
   while (upperCase === false && lowerCase === false && numbers === false && special === false) {
     alert("You must select at least one character type.");
     var upperCase = confirm("Do you want your password to include uppercase characters?");
@@ -47,6 +49,7 @@ function writePassword() {
     if (upperCase === true || lowerCase === true || numbers === true || special === true) break;
   }
   
+  // Assign characters to arrays
   var upperArr = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
   var lowerArr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   var numArr = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
